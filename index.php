@@ -25,7 +25,7 @@ if (isset($_POST["add"])) {
     $query = "insert into student values ('$regNumber','$name','$address','$dob','$nic','$mobileNumber','$email','$course');";
 
     if ((strlen($nic) == 12 && ctype_digit($nic) || strlen($nic) == 10 && ctype_digit(substr($nic, 0, 9)) && substr($nic, 9, 1) == 'V') &&
-        (strlen($mobileNumber) == 10 && ctype_digit($mobileNumber) && substr($mobilenumber, 0, 1) == '0' || strlen($mobileNumber) == 12 && ctype_digit(substr($mobileNumber, 1)) && substr($mobileNumber, 0, 1) == '+')
+        (strlen($mobileNumber) == 10 && ctype_digit($mobileNumber) && substr($mobileNumber, 0, 1) == '0' || strlen($mobileNumber) == 12 && ctype_digit(substr($mobileNumber, 1)) && substr($mobileNumber, 0, 1) == '+')
     ) {
         try {
             mysqli_query($conn, $query);
@@ -153,7 +153,7 @@ if (isset($_POST["delete"])) {
 
         <input type="submit" name="delete" value="Delete" style="background-color: blue; color:white">
 
-        <input type="reset" name="reset" value="Reset" style="background-color: blue; color:white"><br><br>
+        <input type="submit" name="reset" value="Reset" style="background-color: blue; color:white"><br><br>
 
         <a href="studentDetails.php">View Student Details</a><br><br>
 
